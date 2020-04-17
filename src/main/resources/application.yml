@@ -8,6 +8,15 @@ spring:
     password: Xnn1234#
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+task:
+  pool:
+    corePoolSize: 20
+    maxPoolSize: 40
+    keepAliveSeconds: 300
+    queueCapacity: 50
+    threadName: nana-
+
+
 logging:
   config: classpath:logback-spring.xml
   level.org.springframework.boot.autoconfigure: ERROR
