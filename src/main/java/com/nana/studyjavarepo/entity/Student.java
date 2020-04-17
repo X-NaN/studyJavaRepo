@@ -1,4 +1,4 @@
-package com.nana.studyjavarepo.bean;
+package com.nana.studyjavarepo.entity;
 
 import java.util.HashMap;
 import java.util.Map;

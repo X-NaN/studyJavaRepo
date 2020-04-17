@@ -1,4 +1,4 @@
-package com.nana.studyjavarepo.bean;
+package com.nana.studyjavarepo.entity;
 
 /**
  * 机型项目类

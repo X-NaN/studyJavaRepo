@@ -1,4 +1,4 @@
-package com.nana.studyjavarepo.bean;
+package com.nana.studyjavarepo.entity;
 
 public class UserInfo {
     private String userId;

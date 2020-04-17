@@ -1,7 +1,7 @@
 package com.nana.studyjavarepo.reflect;
 
 
-import com.nana.studyjavarepo.bean.Student;
+import com.nana.studyjavarepo.entity.Student;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -180,7 +180,7 @@ public class Reflect {
         Class clazz = null;
         try {
             //获取Class对象
-            clazz = Class.forName("com.xnn.bean.Student");
+            clazz = Class.forName("com.xnn.entity.Student");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
