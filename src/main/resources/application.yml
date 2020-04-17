@@ -14,7 +14,7 @@ task:
     maxPoolSize: 40
     keepAliveSeconds: 300
     queueCapacity: 50
-    threadName: nana-
+    threadNamePrefix: nanaThread-
 
 
 logging:
