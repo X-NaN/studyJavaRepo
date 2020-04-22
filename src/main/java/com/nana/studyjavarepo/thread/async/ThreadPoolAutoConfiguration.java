@@ -2,8 +2,6 @@ package com.nana.studyjavarepo.thread.async;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.codec.CodecProperties;
-import org.springframework.boot.autoconfigure.http.HttpProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +12,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * 线程池的配置
+ * 线程池的配置类，给容器中添加组件
  *
  * @author xingnana
  * @create 2019-12-19
