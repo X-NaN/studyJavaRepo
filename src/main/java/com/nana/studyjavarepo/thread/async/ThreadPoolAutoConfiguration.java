@@ -23,7 +23,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 @Configuration
 @EnableConfigurationProperties({ThreadPoolProperties.class})
 @EnableAsync
-public class ThreadPoolExecutorConfig {
+public class ThreadPoolAutoConfiguration {
 
     private static final int THREADS = Runtime.getRuntime().availableProcessors() + 1;
 
