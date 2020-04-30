@@ -58,8 +58,8 @@ public class ProjectInfo {
 
     private String bz;
 
-    private UserInfo leader;//总负责人
-    private UserInfo projectLeader;//项目负责人
+    private User leader;//总负责人
+    private User projectLeader;//项目负责人
 
     public ProjectInfo(String projectId, String projectName, String projectOuterName, String projectStatus, String riskLevel, String projectType, String hardwarePlatform, String platformModel, String leaderId, String projectLeaderId, String projectApprovalPeriod, String projectApprovalStatus, String bringupPeriod, String bringupStatus, String sdvPeriod, String sdvStatus, String mandatoryCertificationPeriod, String mandatoryCertificationStatus, String sitPeriod, String sitStatus, String networkTestPeriod, String networkTestStatus, String mptPeriod, String mptStatus, String lvtPeriod, String lvtStatus, String bz) {
         this.projectId = projectId;
@@ -311,19 +311,19 @@ public class ProjectInfo {
         this.bz = bz == null ? null : bz.trim();
     }
 
-    public UserInfo getLeader() {
+    public User getLeader() {
         return leader;
     }
 
-    public void setLeader(UserInfo leader) {
+    public void setLeader(User leader) {
         this.leader = leader;
     }
 
-    public UserInfo getProjectLeader() {
+    public User getProjectLeader() {
         return projectLeader;
     }
 
-    public void setProjectLeader(UserInfo projectLeader) {
+    public void setProjectLeader(User projectLeader) {
         this.projectLeader = projectLeader;
     }
 }
