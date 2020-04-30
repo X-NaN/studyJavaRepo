@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 功能描述 <br>
+ * 列表 应用lambada
  *
  * @author xingnana
  * @create 2020-04-30
