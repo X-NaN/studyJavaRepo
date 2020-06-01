@@ -13,7 +13,10 @@ import java.lang.reflect.Method;
  * Date:2018/12/21  16:53
  * Description:动态代理——Cglib子类代理工厂
  * Cglib是一个强大的高性能的代码生成包,它可以在运行期扩展java类与实现java接口.
- * Modified By:
+ * cglib与动态代理最大的区别就是
+ *
+ * 使用动态代理的对象必须实现一个或多个接口
+ * 使用cglib代理的对象则无需实现接口，达到代理类无侵入。
  */
 public class ProxyFactory {
 
