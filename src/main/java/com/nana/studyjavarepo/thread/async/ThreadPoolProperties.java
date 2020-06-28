@@ -2,6 +2,7 @@ package com.nana.studyjavarepo.thread.async;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 /**
  * 线程池配置类
@@ -10,6 +11,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @create 2020-04-17
  */
 @Data
+//@Component
 @ConfigurationProperties(prefix = "task.pool")
 public class ThreadPoolProperties {
     private int corePoolSize;
