@@ -40,7 +40,7 @@ public class IntReverse {
 
     public int reverse1(int x) {
         String xString = String.valueOf(x);
-        String tmp="";
+        String tmp=xString;
         int flag=1;
         if(x<0){
            flag=-1;
@@ -56,6 +56,6 @@ public class IntReverse {
 
     public static void main(String[] args) {
         IntReverse intReverse=new IntReverse();
-        System.out.println(intReverse.reverse1(-128934));
+        System.out.println(intReverse.reverse1(123));
     }
 }
