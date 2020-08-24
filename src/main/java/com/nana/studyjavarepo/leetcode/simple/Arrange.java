@@ -20,7 +20,7 @@ public class Arrange {
 
     /**
      * 全排列
-     * 思想：
+     * 思想：替换
      * 如ABC
      * 第0位，跟第自己换，跟第1位换，跟第n-1位换。[A]BC ->ABC,BAC,CBA
      * --》A[B]C 第自己换，跟C换，A[B]C->ABC,ACB
@@ -65,12 +65,12 @@ public class Arrange {
 
     /**
      * 全排列
-     * 插入
+     * 思想：插入
      *
      * @param arr
      * @return
      */
-    public static List<List<String>> arrange1(List<String> arr) {
+    public static List<List<String>> arrangeByInsert(List<String> arr) {
         if (arr.size() == 1) {
             List list = new ArrayList();
             list.add(arr);
@@ -81,7 +81,7 @@ public class Arrange {
             List<String> dataTmp = copy(arr);
             dataTmp.remove(i);
             String a = arr.get(i);
-            List tmp = arrange1(dataTmp);
+            List tmp = arrangeByInsert(dataTmp);
             for (int j = 0; j < tmp.size(); j++) {
                 List<String> sList = (List<String>) tmp.get(j);
                 sList.add(0, a);
@@ -93,6 +93,18 @@ public class Arrange {
         return result;
     }
 
+    public void cnm(char[] arr, int index, int m) {
+        if (index == m) {
+            System.out.println(arr);
+        }
+
+        for (int i = index; i < arr.length; i++) {
+            swap(index,i,arr);
+
+        }
+    }
+
+
     public static void main(String[] args) {
         String s = "AAB";
         arrange(s.toCharArray(), 0);
@@ -101,7 +113,7 @@ public class Arrange {
         s1.add("A");
         s1.add("B");
         s1.add("C");
-        System.out.println(arrange1(s1));
+        System.out.println(arrangeByInsert(s1));
     }
 
 }
