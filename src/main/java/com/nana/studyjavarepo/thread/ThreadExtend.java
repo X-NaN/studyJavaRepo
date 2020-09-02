@@ -9,8 +9,8 @@ public class ThreadExtend extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 10; i++) {
-            System.out.println("线程" + name + "在执行" + i);
+        for (int i = 0; i < 2; i++) {
+            System.out.println("线程[" + name + "]在执行:" + i);
 
             try {
                 sleep((int) Math.random() * 10);
