@@ -106,6 +106,8 @@ public class JavaFile {
      * @return
      */
     public boolean remove(String path) {
+        // 判断文件是否存在
+        // 判断是否是文件
         if (isFile(path)) {
             return deleteFile(path);
         } else {
@@ -115,10 +117,18 @@ public class JavaFile {
                     return remove(paths[i]);
                 }
             }
+            // 删除空目录
+            return deleteFile(path);
         }
 
-        return deleteFile(path);
+    }
 
+    public static void main(String[] args) {
+        JavaFile javaFile = new JavaFile();
+        String path = System.getProperty("user.dir") + "/src/main/java/com/nana/studyjavarepo/test";
+        String[] childs = javaFile.getChild(path);
+        javaFile.remove(path);
+        System.out.println(childs);
     }
 
 }
