@@ -15,11 +15,11 @@ import java.lang.reflect.Method;
  * <p>
  * Modified By:
  */
-public class ProxyFactoryAntoher implements MethodInterceptor {
+public class CglibProxyFactoryAntoher implements MethodInterceptor {
 
     private Object target;
 
-    public ProxyFactoryAntoher(Object target) {
+    public CglibProxyFactoryAntoher(Object target) {
         this.target = target;
     }
 

@@ -18,12 +18,12 @@ import java.lang.reflect.Method;
  * 使用动态代理的对象必须实现一个或多个接口
  * 使用cglib代理的对象则无需实现接口，达到代理类无侵入。
  */
-public class ProxyFactory {
+public class CglibProxyFactory {
 
     //目标对象
     private Object target;
 
-    public ProxyFactory(Object target) {
+    public CglibProxyFactory(Object target) {
         this.target = target;
     }
 
