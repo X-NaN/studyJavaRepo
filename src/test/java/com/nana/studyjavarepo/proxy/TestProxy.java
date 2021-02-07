@@ -39,28 +39,35 @@ public class TestProxy {
         System.out.println("target对象class:" + target.getClass());
         ProxyFactory proxyFactory = new ProxyFactory(target);
         System.out.println("jdk动态代理proxyFactory的class" + proxyFactory.getProxyInstance().getClass().getName());
+        IUserDao userDao1 = (IUserDao)proxyFactory.getProxyInstance();
+        System.out.println("jdk动态代理对象userDao1的class:" + userDao1.getClass().getName());
+        userDao1.save();
 
         // 第二种方式，实现InvocationHandler接口
         InvocationHandler invocationHandler = new UserDaoInvocationHandler(target);
         ClassLoader classLoader = target.getClass().getClassLoader();
         Class[] interfaces = target.getClass().getInterfaces();
-        IUserDao userDao = (IUserDao) Proxy.newProxyInstance(classLoader, interfaces, invocationHandler);
-        System.out.println("jdk动态代理对象userDao的class:" + userDao.getClass().getName());
+        IUserDao userDao2 = (IUserDao) Proxy.newProxyInstance(classLoader, interfaces, invocationHandler);
+        System.out.println("jdk动态代理对象userDao2的class:" + userDao2.getClass().getName());
+        userDao2.save();
 
     }
 
+    /**
+     * CgLib动态代理测试
+     */
     @Test
     public void testCglibProxy() {
-        UserDao target = new UserDao();
-        System.out.println(target.getClass());
-        UserDao proxy = (UserDao) new CglibProxyFactoryAntoher(target).getProxyInstance();
-        System.out.println("cglib proxy1:" + proxy.getClass());
-        proxy.save();
-
-        IUserDao proxy2 = (IUserDao) new CglibProxyFactory(target).getProxyInstance();
+        IUserDao target = new UserDao();
+        System.out.println("target对象class:" + target.getClass());
+        IUserDao proxy1 = (IUserDao) new CglibProxyFactory(target).getProxyInstance();
         // 代理对象信息
-        System.out.println("cglib proxy2:" + proxy2.getClass());
-        proxy.save();
+        System.out.println("cglib动态代理对象proxy1的class:" + proxy1.getClass().getName());
+        proxy1.save();
+
+        IUserDao proxy2 = (IUserDao) new CglibProxyFactoryAntoher(target).getProxyInstance();
+        System.out.println("cglib动态代理对象proxy1的class:" + proxy2.getClass().getName());
+        proxy2.save();
     }
 
 
