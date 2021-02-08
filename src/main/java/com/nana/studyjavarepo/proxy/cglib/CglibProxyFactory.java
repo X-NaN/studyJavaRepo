@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
  * Description:动态代理——Cglib子类代理工厂
  * Cglib是一个强大的高性能的代码生成包,它可以在运行期扩展java类与实现java接口.
  * cglib与动态代理最大的区别就是
- *
+ * <p>
  * 使用动态代理的target对象必须实现一个或多个接口
  * 使用cglib代理的对象则无需实现接口，达到代理类无侵入。
  */
@@ -41,17 +41,17 @@ public class CglibProxyFactory {
         en.setCallback(new MethodInterceptor() {
             /**
              *
-             * @param o
-             * @param method 目标对象方法
-             * @param objects 方法参数
-             * @param methodProxy
+             * @param object cglib生成的代理对象
+             * @param method 目标对象方法(被拦截的方法)
+             * @param objects 方法参数（被拦截方法的参数）
+             * @param methodProxy 代理方法
              * @return
              * @throws Throwable
              */
             @Override
-            public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+            public Object intercept(Object object, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
                 System.out.println("开启事务...");
-                Object returnValue = method.invoke(target, objects);
+                Object returnValue = methodProxy.invoke(target, objects);
                 System.out.println("提交事务...");
                 return returnValue;
             }

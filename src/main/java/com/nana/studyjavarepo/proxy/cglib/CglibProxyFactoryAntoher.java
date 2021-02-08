@@ -36,7 +36,7 @@ public class CglibProxyFactoryAntoher implements MethodInterceptor {
     }
 
     /**
-     * @param o           代理对象
+     * @param object      cglib生成的代理对象
      * @param method      目标对象方法
      * @param objects     目标对象方法参数
      * @param methodProxy
@@ -44,9 +44,9 @@ public class CglibProxyFactoryAntoher implements MethodInterceptor {
      * @throws Throwable
      */
     @Override
-    public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+    public Object intercept(Object object, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
         System.out.println("开启事务...");
-        Object returnValue = method.invoke(target, objects);
+        Object returnValue = methodProxy.invoke(target, objects);
         System.out.println("提交事务...");
         return returnValue;
     }
