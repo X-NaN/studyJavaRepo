@@ -20,7 +20,7 @@ public class Account {
      *
      * @param amt
      */
-    public void deposit(float amt) {
+    public synchronized void deposit(float amt) {
         amonut += amt;
         try {
             Thread.sleep(100);
@@ -34,7 +34,7 @@ public class Account {
      *
      * @param amt
      */
-    public void withdraw(float amt) {
+    public synchronized void withdraw(float amt) {
         amonut -= amt;
         try {
             Thread.sleep(100);
