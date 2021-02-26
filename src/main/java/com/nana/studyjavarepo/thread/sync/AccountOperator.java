@@ -10,8 +10,8 @@ package com.nana.studyjavarepo.thread.sync;
 public class AccountOperator implements Runnable {
     private Account account;
 
-    public AccountOperator(Account account){
-        this.account=account;
+    public AccountOperator(Account account) {
+        this.account = account;
     }
 
     @Override
@@ -24,6 +24,6 @@ public class AccountOperator implements Runnable {
         account.deposit(500);
         // 取钱
         account.withdraw(500);
-        System.out.println(Thread.currentThread().getName()+":"+account.getBalance());
+        System.out.println(Thread.currentThread().getName() + "," + account.name + ":" + account.getBalance());
     }
 }
