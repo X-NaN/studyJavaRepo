@@ -40,7 +40,7 @@ public class ReentrantLockAccount {
      *
      * @param amt
      */
-    public synchronized void withdraw(float amt) {
+    public void withdraw(float amt) {
 
         lock.lock();
         try {

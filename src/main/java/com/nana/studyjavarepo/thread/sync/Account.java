@@ -17,6 +17,7 @@ public class Account {
 
     /**
      * 存钱
+     * synchronized保证并发存钱没问题
      *
      * @param amt
      */
@@ -31,6 +32,7 @@ public class Account {
 
     /**
      * 取钱
+     * synchronized保证并发取钱没问题
      *
      * @param amt
      */
