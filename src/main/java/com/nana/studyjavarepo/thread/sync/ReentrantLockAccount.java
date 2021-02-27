@@ -9,9 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author xingnana
  * @create 2/26/21
  */
-public class ReentrantLockAccount {
-    String name;
-    float amonut;
+public class ReentrantLockAccount extends Account {
 
     private Lock lock = new ReentrantLock();
 
@@ -25,6 +23,7 @@ public class ReentrantLockAccount {
      *
      * @param amt
      */
+    @Override
     public void deposit(float amt) {
         lock.lock();
         try {
@@ -40,6 +39,7 @@ public class ReentrantLockAccount {
      *
      * @param amt
      */
+    @Override
     public void withdraw(float amt) {
 
         lock.lock();
@@ -50,7 +50,4 @@ public class ReentrantLockAccount {
         }
     }
 
-    public float getBalance() {
-        return amonut;
-    }
 }

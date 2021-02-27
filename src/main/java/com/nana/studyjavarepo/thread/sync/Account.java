@@ -10,6 +10,8 @@ public class Account {
     String name;
     float amonut;
 
+    public Account(){}
+
     public Account(String name, float amonut) {
         this.name = name;
         this.amonut = amonut;
